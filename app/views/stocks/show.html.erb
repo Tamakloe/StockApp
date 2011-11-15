@@ -1,0 +1,57 @@
+<h1> <%= @stock.symbol %> Stock Details </h1>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Trade Date:</b>
+  <%= @stock.date.strftime("%a %d %b %Y") %>
+</p>
+
+<p>
+  <b>Last Trade Price:</b>
+  <%= @stock.time.strftime("%H:%M") %>
+</p>
+
+<p>
+  <b>Stock Symbol:</b>
+  <%= @stock.symbol %>
+</p>
+
+<p>
+  <b>Company Name:</b>
+  <%= @stock.name %>
+</p>
+
+<p>
+  <b>Day's Low:</b>
+  <%= @stock.low %>
+</p>
+
+<p>
+  <b>Current Price:</b>
+  <%= @stock.current %>
+</p>
+
+<p>
+  <b>Day's High:</b>
+  <%= @stock.high %>
+</p>
+
+<p>
+  <b>Stock Exchange:</b>
+  <%= @stock.exchange %>
+</p>
+
+
+<% form_tag stocks_path, :method =>"get" do %>
+
+      <p>
+	Click on button for upto last 5 requested quotes <br />
+       <%=  hidden_field_tag :search, params[:search], :id => 'search_field', :value => @stock.symbol %>
+       <%=  submit_tag ""+@stock.symbol+" Stock History", :symbol => nil %>
+     </p>
+
+<%end%>
+<br />
+<br />
+<%= button_to "Check Another Stock ", new_stock_path, :method =>"get" %> 

@@ -1,0 +1,7 @@
+== Welcome to StockAppGT
+
+StockAppGT is a web-application created by Gerard Tamakloe.
+
+Input a stock ticker symbol and the app will query Yahoo finance to return details of the stock
+
+Completion Date: 15-November-2011

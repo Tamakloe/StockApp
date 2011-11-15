@@ -1,0 +1,40 @@
+<h1>Request Stock Quote</h1>
+
+<%= form_for(@stock, :url => {:action => 'create'}) do |f| %>
+
+
+  <% if @stock.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= "Please Try Again" %> </h2>
+
+      <ul>
+      <% @stock.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Enter Ticker Symbol" %><br />
+    <%= f.text_field :symbol %>
+  </div>
+
+<h4> Examples:</h4>
+<p>
+UPS = "UPS" <br />	
+Google = "Goog" <br />
+Apple = "AAPL" <br />
+Symantec = "SYMC" <br />
+Bank Of Ireland = "BIR.IR" <br />	
+Merck & Company = "MRK" <br />
+Firsthand Tech Opportunities Fund = "TEFQX"
+</p>
+
+  <div class="actions">
+    <%= f.submit "Get Quote" %>
+  </div>
+
+
+
+<% end %>

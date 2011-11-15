@@ -1,0 +1,41 @@
+<h1>Stock History</h1>
+
+<table>
+  <tr>
+    <th>Last Traded Date</th>
+    <th>Trade Time</th>
+    <th>Stock Symbol</th>
+    <th>Company Name</th>
+    <th>Day's Low</th>
+    <th>Current Price</th>
+    <th>Day's High</th>
+    <th>Stock Exchange</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @stocks.each do |stock| %>
+  <tr>
+    <td><%= stock.date.strftime("%a %d %b %Y") %></td>
+    <td><%= stock.time.strftime("%H:%M") %></td>
+    <td><%= stock.symbol %></td>
+    <td><%= stock.name %></td>
+    <td><%= stock.low %></td>
+    <td><%= stock.current %></td>
+    <td><%= stock.high %></td>
+    <td><%= stock.exchange %></td>
+
+	<% if false %>
+    <td><%= link_to 'Show', stock %></td>
+    <td><%= link_to 'Edit', edit_stock_path(stock) %></td>
+    <td><%= link_to 'Destroy', stock, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+	<% end %>
+
+<% end %>
+</table>
+
+<br />
+
+<%= button_to 'Get Another Stock Quote', new_stock_path, :method => "get"%>
