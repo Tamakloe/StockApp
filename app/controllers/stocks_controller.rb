@@ -61,7 +61,7 @@ ensure
     @stock.time = $s[1]
 #Time.parse($s[1])
 
-    @stock.symbol = $s[2]
+    @stock.symbol = $s[2].gsub('/""/','')
     @stock.name = $s[3]
     @stock.low = $s[4]
     @stock.current = $s[5]

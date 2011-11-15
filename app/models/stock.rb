@@ -2,11 +2,11 @@ class Stock < ActiveRecord::Base
 
 
 validates_presence_of :symbol
- 
+=begin 
  def validate
 	errors.add(:symbol, "Must be a valid Ticker Symbol") if date.nil?|| date == "invalid date"
   end
-
+=end
 
 
 
