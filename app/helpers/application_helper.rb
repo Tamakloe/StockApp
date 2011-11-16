@@ -1,6 +1,6 @@
 module ApplicationHelper
 
 	require 'net/http'
-	require 'date'
+	require 'parsedate'
 
 end
