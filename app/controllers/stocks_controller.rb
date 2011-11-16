@@ -54,9 +54,10 @@ class StocksController < ApplicationController
 
 
     @stock.date = Date.parse($s[0])
-rescue Exception
-	ArgumentError 
-ensure
+
+#rescue Exception
+#	ArgumentError 
+#ensure
 
     @stock.time = $s[1]
 #Time.parse($s[1])
